@@ -1,5 +1,41 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head><meta charset="UTF-8"><title>Cancionero Liturgico 2026</title></head> 
-<body><h1>Repertorio de Cantos para la Misa</h1></body> 
-</html> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantoral Liturgico Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700^&family=Crimson+Text:ital,wght@0,400;0,700;1,400^&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="cross">+</div>
+        <h1>CANTORAL PARROQUIAL</h1>
+        <p class="motto">AD MAIOREM DEI GLORIAM</p>
+    </header>
+
+    <main class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar por nombre o tiempo liturgico..." onkeyup="searchTask()">
+        </div>
+
+        <div id="cantosList" class="grid-cantos"></div>
+
+        <div class="admin-access">
+            <button onclick="toggleAdmin()" id="adminBtn">Acceso Administrador</button>
+        </div>
+
+        <section id="adminPanel" class="hidden">
+            <h2>Panel de Control</h2>
+            <div class="form-group">
+                <input type="password" id="adminPass" placeholder="Contrasena">
+                <input type="text" id="cantoTitle" placeholder="Nombre del Canto">
+                <input type="text" id="cantoUrl" placeholder="Link al PDF (Drive/Dropbox)">
+                <button onclick="saveCanto()">Publicar Canto</button>
+            /div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
